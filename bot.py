@@ -14,8 +14,8 @@ TARGET_USER_ID = int(os.getenv('TARGET_USER_ID'))
 
 # 날씨 데이터 가져오기
 async def get_weather():
-    lat = 37.20
-    lon = 126.83
+    lat = 37.57
+    lon = 126.98
     api_key = WEATHER_API_KEY
     url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&lang=kr&units=metric"
 
@@ -31,8 +31,8 @@ async def get_weather():
     description = data['weather'][0]['description']
     city = data['name']
 
-    if "Hwaseong-si" in city:
-        display_name = "화성시"
+    if "Seoul" in city:
+        display_name = "서울"
 
     return f"{display_name}의 현재 기온은 섭씨 {temp}도, 날씨는 {description}입니다."
 
