@@ -50,7 +50,7 @@ target_time = datetime.time(hour=9, minute=0, tzinfo=KST)
 async def daily_weather():
     user = await bot.fetch_user(TARGET_USER_ID)
     weather_info = await get_weather()
-    await user.send(f"🌅<오늘의 날씨>\n{weather_info}")
+    await user.send(f"🌅[오늘의 날씨]\n{weather_info}")
 
 # 봇이 준비되었을 때 이벤트 실행
 @bot.event
